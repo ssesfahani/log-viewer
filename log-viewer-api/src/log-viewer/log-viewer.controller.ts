@@ -52,12 +52,12 @@ export class LogViewerController implements OnModuleInit {
   }
 
   async onModuleInit() {
-    // Logger.log('Clearing logs first...');
-    // await this.logViewerService.clearLogs();
+    Logger.log('Clearing logs first...');
+    await this.logViewerService.clearLogs();
 
-    // Logger.log('Seeding logs into db...');
-    // const sampleFile = this._getSampleFile('./dist/sample.log');
-    // await this._parseSampleFile(sampleFile);
+    Logger.log('Seeding logs into db...');
+    const sampleFile = this._getSampleFile('./dist/sample.log');
+    await this._parseSampleFile(sampleFile);
   }
 
   async _parseSampleFile(sampleFile: Interface): Promise<void> {
@@ -79,7 +79,6 @@ export class LogViewerController implements OnModuleInit {
 
   _getSampleFile(logFilePath: string): Interface {
     const fileStream: ReadStream = createReadStream(logFilePath);
-
     return createInterface({
       input: fileStream,
       crlfDelay: Infinity

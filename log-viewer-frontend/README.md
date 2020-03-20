@@ -1,51 +1,28 @@
-# log-viewer-frontend2
+# Log Viewer Frontend
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+This is where the frontend code lives that interacts with the API.
 
 ## Prerequisites
 
 You will need the following things properly installed on your computer.
 
-* [Git](https://git-scm.com/)
-* [Node.js](https://nodejs.org/) (with npm)
+* [Node.js](https://nodejs.org/) (version >= 10)
 * [Ember CLI](https://ember-cli.com/)
 * [Google Chrome](https://google.com/chrome/)
 
 ## Installation
 
-* `git clone <repository-url>` this repository
-* `cd log-viewer-frontend2`
+* `npm install -g ember-cli@2.18.2` (installs ember-cli)
 * `npm install`
 
 ## Running / Development
 
+* Make sure API is running first!
 * `ember serve`
-* Visit your app at [http://localhost:4200](http://localhost:4200).
-* Visit your tests at [http://localhost:4200/tests](http://localhost:4200/tests).
+* Visit app at [http://localhost:4200](http://localhost:4200).
 
-### Code Generators
+## Why Ember?
+I chose to go with Ember.js for familiarity's sake. I briefly dabbled into React, Angular, and Vue, but realized exploring those options for the exercise would fall outside of the time window.
 
-Make use of the many generators for code, try `ember help generate` for more details
-
-### Running Tests
-
-* `ember test`
-* `ember test --server`
-
-### Building
-
-* `ember build` (development)
-* `ember build --environment production` (production)
-
-### Deploying
-
-Specify what it takes to deploy your app.
-
-## Further Reading / Useful Links
-
-* [ember.js](https://emberjs.com/)
-* [ember-cli](https://ember-cli.com/)
-* Development Browser Extensions
-  * [ember inspector for chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
-  * [ember inspector for firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector/)
+## About
+The app talks to `localhost:3000` for the API. The API serves JSONAPI compliant payloads that the built in Ember serializers know what to do with. I used [https://materializecss.com/](MaterializeCSS) for some out of the box dirty styling, but otherwise, most of the table logic and component work is by hand.

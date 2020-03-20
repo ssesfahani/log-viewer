@@ -27,7 +27,7 @@ export default Route.extend({
   },
 
   model(params) {
-    return new Promise((resolve, reject) => {
+    return new Promise((resolve) => {
       this.store.query('log', params)
         .then((result) => {
           resolve({

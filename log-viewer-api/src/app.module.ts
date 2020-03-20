@@ -12,7 +12,7 @@ const Database = TypeOrmModule.forRoot({
   database: process.env.POSTGRES_DB,
   entities: ['dist/**/*.entity{.ts,.js}'],
   synchronize: true,
-  logging: true
+  logging: false
 });
 
 @Module({
