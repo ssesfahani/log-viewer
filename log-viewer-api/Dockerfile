@@ -1,17 +1,17 @@
-FROM node:10.7 as dist
+FROM node:12 as dist
 WORKDIR /tmp/
-COPY package.json package-lock.json ormconfig.json tsconfig.json tsconfig.build.json ./
+COPY package.json package-lock.json sample.log tsconfig.json tsconfig.build.json ./
 COPY src/ src/
 RUN npm install
 RUN npm run build
 
-FROM node:10.7 as node_modules
+FROM node:12 as node_modules
 WORKDIR /tmp/
 COPY package.json package-lock.json ./
 RUN npm install --production
 
-FROM node:10.7
+FROM node:12
 WORKDIR /usr/local/app
 COPY --from=node_modules /tmp/node_modules ./node_modules
-COPY --from=dist /tmp/dist ./dist
+COPY --from=dist /tmp/dist/ ./dist/
 CMD ["node", "dist/main.js"]

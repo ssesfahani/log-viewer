@@ -2,7 +2,6 @@ version: '3.7'
 
 services:
   api:
-    env_file: .env
     build:
       context: .
     depends_on:
@@ -13,12 +12,10 @@ services:
       - "9229:9229"
     volumes:
       - ./dist:/usr/local/app/dist
+    env_file: .env
 
   postgres:
     image: postgres:10.4
     ports:
       - "35432:5432"
-    environment:
-      POSTGRES_USER: user
-      POSTGRES_PASSWORD: pass
-      POSTGRES_DB: db
+    env_file: .env

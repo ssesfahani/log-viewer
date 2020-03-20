@@ -1,14 +1,18 @@
 {
   "name": "log-viewer",
   "version": "0.0.1",
-  "description": "",
+  "description": "Log Viewer application assignment",
+  "repository": {
+    "url": "https://github.com/ssesfahani/log-viewer"
+  },
   "author": "",
   "license": "MIT",
   "scripts": {
     "prebuild": "rimraf dist",
-    "build": "nest build",
+    "build": "nest build && npm run copy-assets",
+    "copy-assets": "cp sample.log dist/sample.log",
     "watch": "tsc-watch -p tsconfig.build.json",
-    "docker:debug": "docker-compose up",
+    "docker:debug": "npm run copy-assets && docker-compose up",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "start": "nest start",
     "start:dev": "nest start --watch",
@@ -25,12 +29,16 @@
     "@nestjs/common": "^6.10.14",
     "@nestjs/core": "^6.10.14",
     "@nestjs/platform-express": "^6.10.14",
+    "@nestjs/swagger": "^4.4.0",
     "@nestjs/typeorm": "^7.0.0",
+    "class-transformer": "^0.2.3",
+    "class-validator": "^0.11.1",
     "nodemon": "^2.0.2",
     "pg": "^7.18.2",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.0",
     "rxjs": "^6.5.4",
+    "swagger-ui-express": "^4.1.3",
     "typeorm": "^0.2.24"
   },
   "devDependencies": {
