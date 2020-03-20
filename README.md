@@ -22,7 +22,7 @@ One of my main goals was also to make setting up the stack as easy as possible, 
 You will need the following things properly installed on your computer.
 
 * [Docker](https://www.docker.com/) (v18.06.0+)
-* [Node.js](https://nodejs.org/) (v10+)
+* [Node.js](https://nodejs.org/) (v12+)
 * [Ember CLI](https://ember-cli.com/)
 * [Google Chrome](https://google.com/chrome/)
 
