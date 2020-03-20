@@ -1,8 +1,12 @@
 # 🔎 Log Viewer
 
-`As an administrator of a Ruby on Rails based website, I can browse and search through my log files to examine customer browsing patterns or debug an issue.`
+Log Viewer is a fully working web app using:
+* NestJS (Node.js framework) in TypeScript
+* Ember.js
+* PostgreSQL
+* Docker
 
-Log Viewer features a fully working API (using TypeScript, NodeJS, and NestJS), frontend (using Ember.js), and database (using PostgreSQL). One of my main goals was also to make setting up the stack as easy as possible, so I Dockerized the API as much as I could.
+One of my main goals was also to make setting up the stack as easy as possible, so I Dockerized the API as much as I could.
 
 ## Features
 
