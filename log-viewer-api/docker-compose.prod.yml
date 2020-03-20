@@ -1,0 +1,19 @@
+version: '3.7'
+
+services:
+  api:
+    build:
+      context: .
+    depends_on:
+      - postgres
+    command: node ./dist/main.js
+    ports:
+      - "3000:3000"
+      - "9229:9229"
+    env_file: .env
+
+  postgres:
+    image: postgres:10.4
+    ports:
+      - "35432:5432"
+    env_file: .env
