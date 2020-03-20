@@ -1,4 +1,8 @@
-# 🔎 Log Viewer
+# Log Viewer
+
+<p align="center">
+  <img src="https://i.imgur.com/yTeuZkr.png" />
+</p>
 
 Log Viewer is a fully working web app using:
 * NestJS (Node.js framework) in TypeScript
