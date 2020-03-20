@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+.log-viewer-table{
+  &__total {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &__total-count {
+    font-weight: bold;
+  }
+
+  &__paginator {
+    display: flex;
+    justify-content: center;
+  }
+}

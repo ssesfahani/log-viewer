@@ -1,0 +1,74 @@
+<div class="section">
+  <div class="row">
+    <div class="col s3 input-field">
+      <i class="material-icons prefix">search</i>
+      {{input type="text" placeholder="Search..." value=query key-press="resetPage"}}
+    </div>
+
+    <div class="col s2 input-field">
+      <select multiple onchange={{action 'methodFilterChanged'}}>
+        {{#each methodOptions as |mo|}}
+          <option value={{mo.value}} selected={{mo.selected}}>{{mo.display}}</option>
+        {{/each}}
+      </select>
+      <label>HTTP Methods Filter:</label>
+    </div>
+
+    <div class="col s2 push-s3 input-field">
+      <select onchange={{action (mut sortProperty) value="target.value"}}>
+        {{#each sortProperties as |sp|}}
+          <option value={{sp.value}} selected={{sp.selected}}>{{sp.display}}</option>
+        {{/each}}
+      </select>
+      <label>Sorting by:</label>
+    </div>
+
+    <div class="col s2 push-s3 input-field">
+      <i class="material-icons prefix">sort</i>
+      <select onchange={{action (mut sortOrder) value="target.value"}}>
+        {{#each sortOrders as |so|}}
+          <option value={{so.value}} selected={{so.selected}}>{{so.display}}</option>
+        {{/each}}
+      </select>
+    </div>
+  </div>
+  <div class="log-viewer-table__total">
+    <span><span class="log-viewer-table__total-count">{{total}}</span> Total</span>
+  </div>
+  {{#if isLoading}}
+    <div class="progress">
+      <div class="indeterminate"></div>
+    </div>
+  {{/if}}
+  <table class="highlight responsive-table">
+    <thead>
+      <tr>
+        <th>UUID</th>
+        <th>HTTP Method</th>
+        <th>Full Text</th>
+        <th>Latency</th>
+        <th>Timestamp</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      {{#each data as |log|}}
+        <tr>
+          <td>{{log.uuid}}</td>
+          <td>{{log.httpMethod}}</td>
+          <td>{{log.fullText}}</td>
+          <td>{{log.latency}}</td>
+          <td>{{log.timestamp}}</td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+
+  <div class="log-viewer-table__paginator">
+    {{log-viewer-paginator
+      total=total
+      limit=limit
+      fromOffset=fromOffset
+    }}
+  </div>
+</div>

@@ -1,0 +1,11 @@
+<ul class="pagination">
+  <li class={{if disablePrevButton "disabled" "waves-effect"}}><a {{action 'goToPrevPage'}}><i class="material-icons">chevron_left</i></a></li>
+  {{#if (gt totalPages 0)}}
+    {{#each (range 1 totalPages true) as |i|}}
+      <li class={{if (eq i currPage) "active" "waves-effect"}}><a {{action 'goToPage' i}}>{{i}}</a></li>
+    {{/each}}
+  {{else}}
+    <li class="active"><a>1</a></li>
+  {{/if}}
+  <li class={{if disableNextButton "disabled" "waves-effect"}}><a {{action 'goToNextPage'}}><i class="material-icons">chevron_right</i></a></li>
+</ul>

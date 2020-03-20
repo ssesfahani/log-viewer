@@ -1,0 +1,15 @@
+<div class="container">
+  <h1>🔎 Log Viewer</h1>
+  <div class="divider"></div>
+  {{log-viewer-table
+    data=model.data
+    total=model.meta.total
+    query=query
+    limit=limit
+    fromOffset=fromOffset
+    sortProperty=sortProperty
+    sortOrder=sortOrder
+    methods=methods
+    isLoading=isLoading
+  }}
+</div>
