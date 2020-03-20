@@ -23,15 +23,12 @@ You will need the following things properly installed on your computer.
 
 * [Docker](https://www.docker.com/) (v18.06.0+)
 * [Node.js](https://nodejs.org/) (v12+)
-* [Ember CLI](https://ember-cli.com/)
 * [Google Chrome](https://google.com/chrome/)
 
-## Installation
+## Installation / Running
 
+* Clone this repo down and make sure you are on Node 12 (`node -v`)
 * `npm install -g ember-cli@2.18.2` (installs ember-cli)
-* `cd log-viewer-frontend && npm install`
-
-## Running / Development
 
 ### API
 * `cd log-viewer-api/`
@@ -42,6 +39,7 @@ You will need the following things properly installed on your computer.
   
 ### Frontend
 * `cd ../log-viewer-frontend/`
+* `npm install`
 * `ember serve`
   * Assuming all `node_modules` were built properly, you should get a green `Build successful` message
 * Visit app at [http://localhost:4200/log-viewer](http://localhost:4200/log-viewer).
