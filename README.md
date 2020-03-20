@@ -20,6 +20,10 @@ You will need the following things properly installed on your computer.
 
 ## Running / Development
 
-* While in log-viewer-api `docker-compose up -d`
-* While in log-viewer-frontend `ember serve`
+* From log-viewer-api/, `docker-compose up -d --build`
+  * This might take a while as it will need to download a PostgreSQL image and Node image and then build the image.
+  * Upon startup, the API also 1) truncates the `logs` table in Postgres and then 2) seeds the `logs` table from the `sample.log` file
+  * Once it completes go to [http://localhost:3000/api](http://localhost:3000/api). If it succeded, it you should be at the Swagger UI which lists all the endpoints, params, and even allows you to hit the API.
+* From log-viewer-frontend/, `ember serve`
+  * Assuming all `node_modules` were built properly, you should get a green `Build successful` message
 * Visit app at [http://localhost:4200](http://localhost:4200).
