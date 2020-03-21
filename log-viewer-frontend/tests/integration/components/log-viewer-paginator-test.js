@@ -5,20 +5,8 @@ moduleForComponent('log-viewer-paginator', 'Integration | Component | log viewer
   integration: true
 });
 
-test('it renders', function(assert) {
-  // Set any properties with this.set('myProperty', 'value');
-  // Handle any actions with this.on('myAction', function(val) { ... });
-
+test('it renders no results properly', function(assert) {
   this.render(hbs`{{log-viewer-paginator}}`);
-
-  assert.equal(this.$().text().trim(), '');
-
-  // Template block usage:
-  this.render(hbs`
-    {{#log-viewer-paginator}}
-      template block text
-    {{/log-viewer-paginator}}
-  `);
-
-  assert.equal(this.$().text().trim(), 'template block text');
+  assert.equal(this.$().text().trim().replace(/\n/g, '').replace(/\s/g, ''), 'chevron_left1chevron_right');
 });
+
