@@ -38,7 +38,9 @@ You will need the following things properly installed on your computer.
 * `cd log-viewer-api/`
 * `docker-compose -f docker-compose.prod.yml up -d --build`
   * This might take a while as it will need to download a PostgreSQL image and Node image and then build the image.
-  * Upon startup, the API also 1) truncates the `logs` table in Postgres and then 2) seeds the `logs` table from the `sample.log` file (just to get a clean start every time)
+  * Upon startup, the API 
+    1. truncates the `logs` table
+    2. seeds the `logs` table from the `sample.log` file (just to get a clean start every time)
   * Once it completes go to [http://localhost:3000/api](http://localhost:3000/api). If it succeded, it you should be at the Swagger UI which lists all the endpoints, params, and even allows you to hit the API.
   
 ### Frontend
@@ -51,6 +53,6 @@ You will need the following things properly installed on your computer.
 ## Notes/TODOs
 
 * Certain parts of the code were not unit tested as they were more appropriately tested with e2e tests. Due to time constraints, I forewent implementing e2e tests
-* The majority of my time was spent on the API as I didn't want the UI to drive the API design
+* The majority of my time was spent on the API
 * NestJS was still somewhat new to me, so a lot of my time was spent learning the framework, but definitely the right call!
 * Dockerizing for local development (transpiling, hot reloading, running in a container, etc.) is also supported and that also took up a ton of time (TypeScript also makes everything a little more tricky). I provided no docs on there, but feel free to poke at the `docker-compose.yml` files, the `.vscode` folder, and of course the `Dockerfile`.
