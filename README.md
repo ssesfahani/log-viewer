@@ -15,7 +15,7 @@ One of my main goals was also to make setting up the stack as easy as possible, 
 ## Features
 
 * Swagger documentation and UI setup
-* Unit tests where appropriate
+* Unit tests where appropriate with code coverage
 * Fuzzy search over logs
 * Filter by HTTP Method types
 * Various sort options
