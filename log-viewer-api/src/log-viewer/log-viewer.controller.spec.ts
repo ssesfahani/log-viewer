@@ -13,8 +13,8 @@ describe('LogViewer Controller', () => {
         {
           provide: 'ILogViewerService',
           useFactory: () => ({
-            search: jest.fn(() => true),
-            getLogsByUuid: jest.fn(() => true)
+            search: jest.fn(() => [[{ id: 1, uuid: 'abc', fullText: '[abc] full text' }], 0]),
+            getLogsByUuid: jest.fn(() => [])
           })
         }
       ],
